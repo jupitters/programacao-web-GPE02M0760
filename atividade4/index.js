@@ -24,10 +24,15 @@ app.get('/adicionar/:id/:nome/:qtd', (req, res)=>{
         qtd: qtd
     }
 
-    estoque.adicionar(item);
+    if(estoque.adicionar(item)) {
+        html = '<h3>Item adicionado à lista</h3>';
+        res.send(html);
+    } else {
+        html = '<h3>Não foi possivel adicionar item à lista</h3>';
+        res.send(html);
+    }
 
-    html = '<h3>Item adicionado a lista</h3>';
-    res.send(html);
+    
 })
 
 app.get('/listar', (req, res)=>{
@@ -36,17 +41,25 @@ app.get('/listar', (req, res)=>{
 
 app.get('/remover/:id', (req, res)=>{
     id = Number(req.params.id);
-    estoque.remover(id);
-    html = '<h3>Item removido com sucesso</h3>';
-    res.send(html);
+    if(estoque.remover(id)) {
+        html = '<h3>Item removido com sucesso</h3>';
+        res.send(html);
+    } else {
+        html = '<h3>Não foi possivel remover item.</h3>';
+        res.send(html);
+    }
 })
 
 app.get('/editar/:id/:qtd', (req, res)=>{
     id = Number(req.params.id);
     qtd = Number(req.params.qtd);
-    estoque.editar(id, qtd);
-    html = '<h3>Item editado com sucesso</h3>';
-    res.send(html);
+    if(estoque.editar(id, qtd)) {
+        html = '<h3>Item editado com sucesso</h3>';
+        res.send(html);
+    } else {
+        html = '<h3>Não foi possivel editar item.</h3>';
+        res.send(html);
+    }
 })
 
 app.listen(PORT, 'localhost', (req, res)=>{
