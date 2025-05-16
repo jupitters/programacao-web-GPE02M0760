@@ -13,64 +13,64 @@
                 <h1>Agendamento</h1>
             </div>
             <div class="container">
-                <form>
+                <form action="/agendar-consulta" method="POST">
                     <div class="row">
                         <h3>Dados do Paciente</h3>
                         <div class="col">
-                            <label for="Nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="nome">
 
-                            <label for="CPF" class="form-label">CPF</label>
-                            <input type="text" class="form-control" id="cpf">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" name="cpf" id="cpf">
 
-                            <label for="Telefone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="telefone">     
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" name="telefone" id="telefone">     
                         </div><br>
                         <div class="col">
-                            <label for="Sobrenome" class="form-label">Sobrenome</label>
-                            <input type="text" class="form-control" id="sobrenome">
+                            <label for="sobrenome" class="form-label">Sobrenome</label>
+                            <input type="text" class="form-control" name="sobrenome" id="sobrenome">
 
-                            <label for="Data de Nascimento" class="form-label">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="Data de Nascimento"">
+                            <label for="datanascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" name="datanascimento" id="datanascimento"">
 
-                            <label for="CEP" class="form-label">CEP</label>
-                            <input type="text" class="form-control" id="cep">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" name="cpf" id="cep">
                         </div><br>
                         <div>
-                            <label for="Endereço" class="form-label">Endereço</label>
-                            <input type="text" class="form-control" id="endereco">
+                            <label for="endereço" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" name="endereco" id="endereco">
                         </div><br>
                     </div>
                     <br>
                     <div class="row">
                         <h3>Dados de Consulta</h3>
                         <div class="col">
-                            <label for="Clinica" class="form-label">Clinica</label>
-                            <select class="form-select" aria-label="Small select example">
+                            <label for="clinica" class="form-label">Clinica</label>
+                            <select class="form-select" aria-label="Small select example" name="clinica" id="clinica">
                                 <option selected>Nenhuma Selecionada</option>
                                 <option value="1">Clinica Um</option>
                                 <option value="2">Clinica Dois</option>
                                 <option value="3">Clinica Três</option>
                             </select>
 
-                            <label for="Data" class="form-label">Data</label>
-                            <input type="date" class="form-control" id="data">     
+                            <label for="data" class="form-label">Data</label>
+                            <input type="date" class="form-control" name="data" id="data">     
                         </div><br>
                         <div class="col">
-                            <label for="Especialidade" class="form-label">Especialidade</label>
-                            <select class="form-select" aria-label="Small select example">
+                            <label for="especialidade" class="form-label">Especialidade</label>
+                            <select class="form-select" aria-label="Small select example" name="especialidade" id="especialidade">
                                 <option selected>Nenhuma Selecionada</option>
                                 <option value="1">Clinica Um</option>
                                 <option value="2">Clinica Dois</option>
                                 <option value="3">Clinica Três</option>
                             </select>
 
-                            <label for="Hora" class="form-label">Hora</label>
-                            <input type="time" class="form-control" id="hora">
+                            <label for="hora" class="form-label">Hora</label>
+                            <input type="time" class="form-control" name="hora" id="hora">
                         </div><br>
                         <div class="mb-3">
-                            <label for="Observação" class="form-label">Observação</label>
-                            <textarea class="form-control" id="observacao" rows="3"></textarea>
+                            <label for="observação" class="form-label">Observação</label>
+                            <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
                         </div>
                     </div><br>
                     <div class="row">
