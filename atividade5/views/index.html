@@ -12,33 +12,46 @@
             <div class="row text-center">
                 <h1>Agendamento</h1>
             </div>
+
+            {{#erro_form}}
+            <div class="alert alert-warning mt-3">
+                <Strong>Formulário</Strong> inváldo. Preencha o campo nome!</Strong> Preencha todos os campos!
+            </div>
+            {{/erro_form}}
+
+            {{#campos_invalidos}}
+            <div class="alert alert-warning mt-3">
+                <Strong>{{.}}</Strong> invalido. Preencha o campo.
+            </div>
+            {{/campos_invalidos}}
+
             <div class="container">
-                <form action="/agendar-consulta" method="POST">
+                <form action="/agendar_consulta" method="POST">
                     <div class="row">
                         <h3>Dados do Paciente</h3>
                         <div class="col">
                             <label for="nome" class="form-label mt-1">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="nome">
+                            <input type="text" class="form-control" name="nome" id="nome" value="{{data.nome}}">
 
                             <label for="cpf" class="form-label mt-1">CPF</label>
-                            <input type="text" class="form-control" name="cpf" id="cpf">
+                            <input type="text" class="form-control" name="cpf" id="cpf" value="{{data.cpf}}">
 
                             <label for="telefone" class="form-label mt-1">Telefone</label>
-                            <input type="text" class="form-control" name="telefone" id="telefone">     
+                            <input type="text" class="form-control" name="telefone" id="telefone" value="{{data.telefone}}">     
                         </div><br>
                         <div class="col">
                             <label for="sobrenome" class="form-label mt-1">Sobrenome</label>
-                            <input type="text" class="form-control" name="sobrenome" id="sobrenome">
+                            <input type="text" class="form-control" name="sobrenome" id="sobrenome" value="{{data.sobrenome}}">
 
                             <label for="datanascimento" class="form-label mt-1">Data de Nascimento</label>
-                            <input type="date" class="form-control" name="datanascimento" id="datanascimento"">
+                            <input type="date" class="form-control" name="datanascimento" id="datanascimento" value="{{data.datanascimento}}">
 
                             <label for="cep" class="form-label mt-1">CEP</label>
-                            <input type="text" class="form-control" name="cpf" id="cep">
+                            <input type="text" class="form-control" name="cep" id="cep" value="{{data.cep}}">
                         </div><br>
                         <div>
                             <label for="endereco" class="form-label mt-1">Endereço</label>
-                            <input type="text" class="form-control" name="endereco" id="endereco">
+                            <input type="text" class="form-control" name="endereco" id="endereco" value="{{data.endereco}}">
                         </div><br>
                     </div>
                     <br>
@@ -46,7 +59,7 @@
                         <h3>Dados de Consulta</h3>
                         <div class="col">
                             <label for="clinica" class="form-label mt-1">Clinica</label>
-                            <select class="form-select" aria-label="Small select example" name="clinica" id="clinica">
+                            <select class="form-select" aria-label="Small select example" name="clinica" id="clinica" value="{{data.clinica}}">
                                 <option selected>Nenhuma Selecionada</option>
                                 <option value="Clinica 1">Clinica Um</option>
                                 <option value="Clinica 2">Clinica Dois</option>
@@ -54,11 +67,11 @@
                             </select>
 
                             <label for="dataconsulta" class="form-label mt-1">Data da Consulta</label>
-                            <input type="date" class="form-control" name="dataconsulta" id="dataconsulta">     
+                            <input type="date" class="form-control" name="dataconsulta" id="dataconsulta" value="{{data.dataconsulta}}">     
                         </div><br>
                         <div class="col">
                             <label for="especialidade" class="form-label mt-1">Especialidade</label>
-                            <select class="form-select" aria-label="Small select example" name="especialidade" id="especialidade">
+                            <select class="form-select" aria-label="Small select example" name="especialidade" id="especialidade" value="{{data.especialidade}}">
                                 <option selected>Nenhuma Selecionada</option>
                                 <option value="Especialidade 1">Especialidade Um</option>
                                 <option value="Especialidade 2">Especialidade Dois</option>
@@ -66,11 +79,11 @@
                             </select>
 
                             <label for="horaconsulta" class="form-label mt-1">Hora da Consulta</label>
-                            <input type="time" class="form-control" name="horaconsulta" id="horaconsulta">
+                            <input type="time" class="form-control" name="horaconsulta" id="horaconsulta" value="{{data.horaconsulta}}">
                         </div><br>
                         <div class="mb-3">
                             <label for="observacao" class="form-label mt-1">Observação</label>
-                            <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
+                            <textarea class="form-control" name="observacao" id="observacao" rows="3" value="{{data.observacao}}"></textarea>
                         </div>
                     </div><br>
                     <div class="row mb-3">
