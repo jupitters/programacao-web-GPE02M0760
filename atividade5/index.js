@@ -11,6 +11,10 @@ app.get('/', (req, res)=>{
     res.render('index.html');
 })
 
+app.post('/agendar-consulta', (req, res)=> {
+    
+})
+
 app.listen(PORT, ()=>{
     console.log(`Iniciando servidor na porta ${PORT}`);
 })
