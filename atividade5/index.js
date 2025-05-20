@@ -32,6 +32,50 @@ app.post('/agendar_consulta', (req, res)=> {
         campos_invalidos.push("CPF")
     }
 
+    if(data.datanascimento.length == 0){
+        erro_form = true;
+        campos_invalidos.push("Data de Nascimento")
+    }
+
+    if(data.telefone.length == 0){
+        erro_form = true;
+        campos_invalidos.push("Telefone")
+    }
+
+    if(data.cep.length == 0){
+        erro_form = true;
+        campos_invalidos.push("CEP")
+    }
+
+    if(data.endereco.length == 0){
+        erro_form = true;
+        campos_invalidos.push("Endereço")
+    }
+
+    if(data.clinica == "Nenhuma Selecionada"){
+        erro_form = true;
+        campos_invalidos.push("Clinica")
+    }
+
+    if(data.dataconsulta.length == 0){
+        erro_form = true;
+        campos_invalidos.push("Data da Consulta")
+    }
+
+    if(Date.parse(data.dataconsulta) <= Date.now()){
+        campos_invalidos.push("Data da Consulta")
+    }
+
+    if(data.especialidade == "Nenhuma Selecionada"){
+        erro_form = true;
+        campos_invalidos.push("Especialidade")
+    }
+
+    if(data.horaconsulta.length == 0){
+        erro_form = true;
+        campos_invalidos.push("Hora da Consulta")
+    }
+
 
     res.render('index.html', {erro_form, campos_invalidos, data});
 })

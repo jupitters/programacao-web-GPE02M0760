@@ -15,13 +15,13 @@
 
             {{#erro_form}}
             <div class="alert alert-warning mt-3">
-                <Strong>Formulário</Strong> inváldo. Preencha o campo nome!</Strong> Preencha todos os campos!
+                <Strong>Formulário inválido.</Strong> Preencha todos os campos!
             </div>
             {{/erro_form}}
 
             {{#campos_invalidos}}
             <div class="alert alert-warning mt-3">
-                <Strong>{{.}}</Strong> invalido. Preencha o campo.
+                Campo "<Strong>{{.}}</Strong>" invalido. Preencha o campo corretamente.
             </div>
             {{/campos_invalidos}}
 
