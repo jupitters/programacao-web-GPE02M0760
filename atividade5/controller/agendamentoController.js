@@ -1,8 +1,6 @@
-const getIndexView = (req, res) => {
-    res.render('index.html');
-}
+const getIndexView = (req, res) => res.render('index.html');
 
-const postAgendarConsulta = (req, res)=> {
+const postAgendarConsulta = (req, res) => {
     let data = req.body;
     let erro_form = false;
     let campos_invalidos = [];
@@ -74,3 +72,4 @@ module.exports = {
     getIndexView,
     postAgendarConsulta,
 }
+

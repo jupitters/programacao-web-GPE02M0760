@@ -1,6 +1,7 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
-const agendamentoController = require('./controller/agendamentoController')
+const agendamentoRouter = require('./routers/agendamentoRouter')
+
 const app = express()
 const PORT = 8080;
 
@@ -9,7 +10,6 @@ app.set('view-engine', 'html');
 app.set('views', __dirname + '/views');
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', agendamentoController.getIndexView())
-app.post('/agendar_consulta', agendamentoController.postAgendarConsulta())
+app.use('/', agendamentoRouter);
 
 app.listen(PORT, () => console.log(`Iniciando servidor na porta ${PORT}`))
