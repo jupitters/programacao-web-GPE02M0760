@@ -3,6 +3,17 @@ const getIndexView = (req, res) => res.render('index.html');
 const postAgendarConsulta = (req, res) => {
     let data = req.body;
     let erro_form = false;
+    campos_invalidos = validarDados(data)
+
+    res.render('index.html', {erro_form, campos_invalidos, data});
+}
+
+module.exports = {
+    getIndexView,
+    postAgendarConsulta,
+}
+
+const validarDados = (data) => {
     let campos_invalidos = [];
 
     if(data.nome.length == 0){
@@ -64,12 +75,5 @@ const postAgendarConsulta = (req, res) => {
         campos_invalidos.push("Hora da Consulta")
     }
 
-
-    res.render('index.html', {erro_form, campos_invalidos, data});
+    return campos_invalidos;
 }
-
-module.exports = {
-    getIndexView,
-    postAgendarConsulta,
-}
-
