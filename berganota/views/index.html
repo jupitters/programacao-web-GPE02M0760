@@ -68,7 +68,6 @@
         .login-image {
             width: 300px;
             height: 300px;
-            position: relative;
         }
 
         .btn {
@@ -82,12 +81,10 @@
                 top: auto;
                 transform: none;
                 text-align: bottom;
+                justify-content: bottom;
+                flex-direction: column;
             }
             
-            .content-wrapper {
-                flex-direction: column;
-                justify-content: bottom;
-            }
         }
     </style>
 </head>
@@ -121,8 +118,8 @@
         
         <div class="container h-100">
             <div class="col-8 justify-content-end">
-                <div class="container text-center">
-                    <div class="image-container col align-self-end">
+                <div class="text-center">
+                    <div class="image-container ">
                         <img src="assets/login.png" class="login-image">
                     </div>
                 </div>
