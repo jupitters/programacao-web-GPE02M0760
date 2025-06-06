@@ -2,6 +2,12 @@ const agendamentoConsulta = require('../models/agendamentoConsultaModel');
 
 const getIndexView = (req, res) => res.render('index.html');
 
+const getAgendamentosView = (req, res) => {
+    agendamentoConsulta.findAll().then((agendamentos) => {
+        res.render('agendamentos.html', {agendamentos});
+    })
+}
+
 const postAgendarConsulta = (req, res) => {
     let data = req.body;
     let erro_form = false;
@@ -20,6 +26,7 @@ const postAgendarConsulta = (req, res) => {
 
 module.exports = {
     getIndexView,
+    getAgendamentosView,
     postAgendarConsulta,
 }
 
