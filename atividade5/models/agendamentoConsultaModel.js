@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const AgendamentoConsluta = db.define('agendamento_consulta', {
+const AgendamentoConsulta = db.define('agendamento_consulta', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
-        primaryKey: True
+        primaryKey: true
     },
     nome: {
         type: Sequelize.STRING,
@@ -55,4 +55,4 @@ const AgendamentoConsluta = db.define('agendamento_consulta', {
 
 });
 
-module.exports = AgendamentoConsluta;
+module.exports = AgendamentoConsulta;

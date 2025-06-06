@@ -1,3 +1,5 @@
+const agendamentoConsulta = require('../models/agendamentoConsultaModel');
+
 const getIndexView = (req, res) => res.render('index.html');
 
 const postAgendarConsulta = (req, res) => {
@@ -5,7 +7,15 @@ const postAgendarConsulta = (req, res) => {
     let erro_form = false;
     campos_invalidos = validarDados(data)
 
-    res.render('index.html', {erro_form, campos_invalidos, data});
+    if(campos_invalidos.length == 0){
+        agendamentoConsulta.create(data).then(() => {
+            res.redirect('/agendamentos');
+        }) ;
+    }
+    else{
+        res.render('index.html', {erro_form, campos_invalidos, data});
+    }
+
 }
 
 module.exports = {
